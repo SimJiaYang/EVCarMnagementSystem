@@ -4,11 +4,11 @@ public class Tesla extends ElectricCar{
     private boolean isTeslaTheatreEnabled;
 
     protected Tesla(){
-        this("unknown","unknown",new Manufacturer(),false,false,false);
+        this("unknown","unknown",0,new Manufacturer(),false,false,false);
     }
-    protected Tesla(String carID, String carModel, Manufacturer carManufacturer,
+    protected Tesla(String carID, String carModel,double batteryCapacity, Manufacturer carManufacturer,
                     boolean isAutoPilotEnabled, boolean isFullSelfDrivingEnabled, boolean isTeslaTheatreEnabled){
-        super(carID, carModel, carManufacturer);
+        super(carID, carModel, batteryCapacity,carManufacturer);
         this.isAutoPilotEnabled = isAutoPilotEnabled;
         this.isFullSelfDrivingEnabled = isFullSelfDrivingEnabled;
         this.isTeslaTheatreEnabled = isTeslaTheatreEnabled;

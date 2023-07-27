@@ -3,11 +3,11 @@ public class Ora extends ElectricCar{
     private boolean hasWirelessCharging;
 
     protected Ora(){
-        this("unknown","unknown",new Manufacturer(),false,false);
+        this("unknown","unknown",0,new Manufacturer(),false,false);
     }
-    protected Ora(String carID, String carModel, Manufacturer carManufacturer
+    protected Ora(String carID, String carModel,double batteryCapacity, Manufacturer carManufacturer
             , boolean hasPanaromicSunroof, boolean hasWirelessCharging){
-        super(carID, carModel, carManufacturer);
+        super(carID, carModel,batteryCapacity, carManufacturer);
         this.hasPanaromicSunroof = hasPanaromicSunroof;
         this.hasWirelessCharging = hasWirelessCharging;
     }

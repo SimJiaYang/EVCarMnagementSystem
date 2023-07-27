@@ -3,13 +3,15 @@ public class ElectricCar {
     private String carModel;
     private Manufacturer carManufacturer;
     private ChargingStation chargingStation;
+    private double batteryCapacity;
     protected ElectricCar(){
-        this("unknown","unknown",new Manufacturer());
+        this("unknown","unknown",0,new Manufacturer());
     }
-    protected ElectricCar(String carID, String carModel, Manufacturer carManufacturer){
+    protected ElectricCar(String carID, String carModel, double batteryCapacity,Manufacturer carManufacturer){
         this.carID = carID;
         this.carModel = carModel;
         this.carManufacturer = carManufacturer;
+        this.batteryCapacity = batteryCapacity;
         // When an electric car is charging, it should be linked to a specific charging station.
         // Default is not charging
         this.chargingStation = new ChargingStation();
@@ -31,6 +33,10 @@ public class ElectricCar {
         this.chargingStation = chargingStation;
     }
 
+    public void setBatteryCapacity(double batteryCapacity) {
+        this.batteryCapacity = batteryCapacity;
+    }
+
     public String getCarID() {
         return carID;
     }
@@ -47,10 +53,15 @@ public class ElectricCar {
         return carManufacturer;
     }
 
+    public double getBatteryCapacity() {
+        return batteryCapacity;
+    }
+
     @Override
     public String toString() {
         return  "\nCar ID: " + carID +
                 "\nCar Model: " + carModel +
+                "\nCar Battery Capacity " + batteryCapacity + "kWh" +
                 "\nCar Manufacturer: " + carManufacturer.getCarManufacturerName();
     }
 }

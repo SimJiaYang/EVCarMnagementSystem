@@ -33,7 +33,11 @@ public class Customer {
         electricCars.add(electricCar);
     }
 
-    public String getElectricCars() {
+    public ArrayList<ElectricCar> getElectricCars() {
+        return electricCars;
+    }
+
+    public String getModel(){
         String models = "\n";
         for(ElectricCar car: electricCars){
             models += car.getCarModel() + "\n";
@@ -46,6 +50,6 @@ public class Customer {
         return "\nCustomer" +
                 "\nCustomer ID: '" + customerID +
                 "\nCustomer Name: '" + customerName +
-                "\nOwned Car List:" + getElectricCars();
+                "\nOwned Car List:" + getModel();
     }
 }
